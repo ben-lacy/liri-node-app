@@ -1,25 +1,21 @@
-// --------- REQUEST ------------ //
-var request = require("request");
-
-// --------- EXPRESS ------------ //
+// --------------- EXPRESS --------------- //
 var express = require("express");
 var app = express();
 var port = process.env.PORT || 3000;
 
-// --------- STATIC ROUTES ------------ //
+// ----------- STATIC ROUTES ------------ //
 app.use(express.static("public"));
-app.use(express.static("routes"));
 
-// --------- BODYPARSER ------------ //
+// ------------- BODYPARSER ------------- //
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// --------- ROUTES ------------ //
+// --------------- ROUTES -------------- //
 var path = require("path");
 require(path.join(__dirname, './routes/routes.js'))(app);
 
-// --------- PORT LISTENER ------------ //
+// ------------ PORT LISTENER ---------- //
 app.listen(port, function() {
     console.log("App listening on port " + port);
 });
