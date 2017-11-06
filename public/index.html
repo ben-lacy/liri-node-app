@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Weather Aware</title>
+        <title>WeatherAware</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- FAVICON -->
@@ -12,62 +12,45 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="/style/style.css" rel="stylesheet">
         <!-- FONTS -->
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        
     </head>
 	<body>
-		<div class="container text-center" id="view-window">    <!-- #view-window for page size -->
-            <div id="main-box">                                     <!-- #main-box for game position -->
-                <span id="tfBanner">TRIVIA <img src="/images/bulb-icon.png" alt="bulb-icon" id="bulb-img"> FLASH</span>
-                <br>
-                    <div class="row" id="q-field"></div>                    <!-- #q-field O/C -->
-                    <div class="row" id="a-field">                          <!-- #a-field -->
-                        <div class="col-xs-12">
-                            <br>
-                            <p><b>Pick your poison:</b></p>
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="category" name="26">CELEBRITIES</div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="category" name="12">MUSIC</div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="category" name="27">ANIMALS</div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="category" name="20">MYTHOLOGY</div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="category" name="25">ART</div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="category" name="22">GEOGRAPHY</div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="category" name="23">HISTORY</div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="category" name="21">SPORTS</div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="category" name="14">TELEVISION</div>
-                                </div>
+        <div id="landing-page">
+            <div id="pick-your-poison">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1>Is winter really coming?</h1>
+                            <h3>Weather stuff words here wow such text filling blank space should've used lorem ipsum.</h3>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="loc-input" placeholder="Enter your City + State or Zip Code">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit" id="loc-input-btn">Submit</button>
+                                </span>
                             </div>
-                            <br>
-                            <div class="row">
-                                <div class="col-xs-12 submit-btn" id="start-game">READY, SET, GO!</div>
-                            </div>
-                        </div>                                                  
-                    </div><!-- CLOSE #a-field -->
-                    <br>
-                    <div class="row" id="stats-bar"><!-- #stats-bar -->
-                        <div class="col-xs-6">Timer <b id="main-timer">20</b></div><!-- #main-timer -->
-                        <div class="col-xs-6">Round <b id="q-count">0</b><b> / 10</b></div><!-- #q-count -->
-                    </div><!-- CLOSE #stats-bar -->
-            </div><!-- CLOSE #main-box -->
-        </div><!-- CLOSE #view-window -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <script src="https://code.jquery.com/jquery.js"></script>
-        <script src="/js/app.js" type="text/javascript"></script>
+        <script>
+            function hideLandingPage(){
+                $("#landing-page").toggleClass('hidden');
+            }
+
+            $("#loc-input-btn").click(function(event){
+                event.preventDefault();
+                var loc = $("#loc-input").val().trim();
+                $("#loc-input").val("");
+                loc = { location: loc };
+                var currentURL = window.location.origin;
+                // hideLandingPage();
+                $.post(currentURL + '/api/location', loc, function(data){
+                    // do something with returned data
+                });
+            });
+        </script>
     </body>
 </html>
