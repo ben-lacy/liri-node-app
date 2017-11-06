@@ -1,17 +1,14 @@
 /* FIRST SECTION - CURRENT WEATHER CONDITIONS */
 #current-weather {
-  height: 40vh;
   border: solid 4px yellow;
 }
 #current-temp, #current-conditions {
   border: solid 4px red;
   height: 100%;
-  width: 50%;
 }
 
 /* SECOND ROW - 3 DAY FORECAST */
 #forecast{
-  height: 40vh;
   border: solid 4px black;
 }
 .forecast-cells{
@@ -47,5 +44,4 @@ nav {
 }
 #brand-image {
   height: 100%;
-  float: left;
 }
