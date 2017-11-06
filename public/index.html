@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="/style/style.css" rel="stylesheet">
     <!-- FONTS -->
-      
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
 	<body>
     <!-- <div id="landing-page">
@@ -30,141 +30,144 @@
       </div>
     </div> -->
     <div  id="weather-display"> <!-- class="hidden" -->
-      <nav>
-        <a href="/">
-          <div class="pull-left" id="brand-image">
-            <img alt="Logo" src="/images/weather-aware-logo.png">
-          </div>
-        </a>
-        <form class="pull-right">
-          <div class="form-group pull-left">
-            <input type="text" class="form-control" id="nav-search" placeholder="City, State or Zip">
-          </div>
-          <button type="submit" class="btn btn-primary">
-            <span class="glyphicon glyphicon-arrow-right"></span>
-          </button>
-        </form>
-      </nav>
-      <div class="row">
-        <div class="col-xs-12 text-right">
-          <div id="refresh-text" style="padding: 5px">
-            <span style="font-size: 12px; padding: 4px;">
-              Last updated 7/9/17 at 10:37AM
-            </span>
-            <span class="glyphicon glyphicon-refresh" style="font-size: 16px"></span>
-          </div>
+      <div id="current-weather">
+        <!-- //////////////////// NAVBAR /////////////////// -->
+          <nav>
+            <a href="/"><div class="pull-left text-center">
+                <img alt="Logo" src="/images/LOGO-white-PNG-01.png" id="nav-logo">
+            </div></a>
+            <form id="nav-form">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="City, State or Zip">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="submit">
+                      <span class="glyphicon glyphicon-arrow-right"></span>
+                  </button>
+                </span>
+              </div>
+            </form>
+          </nav>
+          <br><br>
+        <div class="container">
+          <!-- //////////////////// CURRENT-WEATHER /////////////////// -->
+            <div class="row">
+              <div class="col-sm-4" id="current-temp">
+                <div class="row">
+                  <p>
+                    &nbsp;
+                    <span="city-state"> Dallas, TX </span>  <!-- CITY/STATE -->
+                  </p>
+                </div>
+                <div class="row font-weight-bold" id="tempLg">   <!-- CURRENT TEMP - LARGE -->
+                  85&deg;
+                </div>
+                <p>Feels Like: <span id="feels-like">120</span>&deg;</p>   <!-- FEELS LIKE -->
+              </div>
+    
+              <div class="col-sm-8" id="current-conditions">
+                <span class="glyphicons glyphicons-cloud"></span><p id="skytext">Cloudy</p>                                                          <!-- SKYTEXT -->
+                <p id="rain">Rain Chance: 0%</p>                                                    <!-- RAIN CHANCE -->
+                <p>High: <span id="high">78</span>&deg; | Low: <span id="low">57</span>&deg;</p>    <!-- HIGH/LOW -->
+                <p>Wind Direction: <span id="wind-direction">Northwest</span></p>                   <!-- Wind Direction -->
+                <p>Wind Speed: <span id="wind-speed">6 mph</span></p>                               <!-- Wind Speed -->
+              </div>
+            </div>
         </div>
       </div>
-      <br><br>
 
-      <div class="container">
-        <div class="row" id="current-weather">
-          <!-- //////////////////// CURRENT TEMP /////////////////// -->
-          <div class="col-sm-3 text-center" id="current-temp">
+      <!-- //////////////////// FORECAST /////////////////// -->
+      <div id="forecast">
+        <div class="container">
+            <div class="row text-center" id="forecast">
+              <div class="col-sm-4">
+                <div class="forecast-cells" id="fc-day1">
+                  <div class="row">
+                    <h4>TUESDAY</h4>
+                    <h4>DATE</h4>
+                  </div>
+                  <div class="row">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyuvXFxk99znqDv1ETCZpjPmEy9G6wlDZ8ZZk6NDiP1v4zAOLX" alt="IMAGE" style='height: 100px; width: 100px;'>
+                  </div>
+                  <div class="row">
+                    SUNNY
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <h4>HIGH</h4>
+                      <h1>50</h1>
+                    </div>
+                    <div class="col-xs-6">
+                      <h4>LOW</h4>
+                      <h1>40</h1>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <h4>Rain Chance: 100%</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="forecast-cells" id="fc-day2">
+                  <div class="row">
+                    <h4>TUESDAY</h4>
+                    <h4>DATE</h4>
+                  </div>
+                  <div class="row">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyuvXFxk99znqDv1ETCZpjPmEy9G6wlDZ8ZZk6NDiP1v4zAOLX" alt="IMAGE" style='height: 100px; width: 100px;'>
+                  </div>
+                  <div class="row">
+                    SUNNY
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <h4>HIGH</h4>
+                      <h1>50</h1>
+                    </div>
+                    <div class="col-xs-6">
+                      <h4>LOW</h4>
+                      <h1>40</h1>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <h4>Rain Chance: 100%</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="forecast-cells" id="fc-day3">
+                  <div class="row">
+                    <h4>TUESDAY</h4>
+                    <h4>DATE</h4>
+                  </div>
+                  <div class="row">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyuvXFxk99znqDv1ETCZpjPmEy9G6wlDZ8ZZk6NDiP1v4zAOLX" alt="IMAGE" style='height: 100px; width: 100px;'>
+                  </div>
+                  <div class="row">
+                    SUNNY
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <h4>HIGH</h4>
+                      <h1>50</h1>
+                    </div>
+                    <div class="col-xs-6">
+                      <h4>LOW</h4>
+                      <h1>40</h1>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <h4>Rain Chance: <span id="fc3rain">100%</span></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br><br>
             <div class="row">
-              <h3 style="margin-top: 0">&nbsp;Dallas, TX</h3>
-            </div>
-            <div class="row">
-              <div class="col-xs-9 text-right" id="tempLg">
-                85
-              </div>
-              <div class="col-xs-3 text-left" id="deg-f">
-                &deg; F
-              </div>
-            </div>
-            <h4>Feels Like: 120&deg;</h4>
-          </div>
-
-          <!-- //////////////////// CURRENT CONDITIONS /////////////////// -->
-          <div class="col-sm-9" id="current-conditions">
-            <h4>&nbsp;</h4>
-            <h4>Cloudy</h4>
-            <h4>Rain Chance: 0%</h4>
-            <h4>High: 78&deg; | Low: 57&deg;</h4>
-            <h4>Wind Direction: Northwest</h4>
-            <h4>Wind Speed: 6 mph</h4>
-          </div>
-        </div>
-        <br><br><br><br>
-        <div class="row text-center" id="forecast">
-          <div class="col-sm-4">
-            <div class="forecast-cells" id="fc-day1">
-              <div class="row">
-                <h4>TUESDAY</h4>
-                <h4>DATE</h4>
-              </div>
-              <div class="row">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyuvXFxk99znqDv1ETCZpjPmEy9G6wlDZ8ZZk6NDiP1v4zAOLX" alt="IMAGE" style='height: 100px; width: 100px;'>
-              </div>
-              <div class="row">
-                SUNNY
-              </div>
-              <div class="row">
-                <div class="col-xs-6">
-                  <h4>HIGH</h4>
-                  <h1>50</h1>
-                </div>
-                <div class="col-xs-6">
-                  <h4>LOW</h4>
-                  <h1>40</h1>
-                </div>
-              </div>
-              <div class="row">
-                <h4>Rain Chance: 100%</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="forecast-cells" id="fc-day2">
-              <div class="row">
-                <h4>TUESDAY</h4>
-                <h4>DATE</h4>
-              </div>
-              <div class="row">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyuvXFxk99znqDv1ETCZpjPmEy9G6wlDZ8ZZk6NDiP1v4zAOLX" alt="IMAGE" style='height: 100px; width: 100px;'>
-              </div>
-              <div class="row">
-                SUNNY
-              </div>
-              <div class="row">
-                <div class="col-xs-6">
-                  <h4>HIGH</h4>
-                  <h1>50</h1>
-                </div>
-                <div class="col-xs-6">
-                  <h4>LOW</h4>
-                  <h1>40</h1>
-                </div>
-              </div>
-              <div class="row">
-                <h4>Rain Chance: 100%</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="forecast-cells" id="fc-day3">
-              <div class="row">
-                <h4>TUESDAY</h4>
-                <h4>DATE</h4>
-              </div>
-              <div class="row">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyuvXFxk99znqDv1ETCZpjPmEy9G6wlDZ8ZZk6NDiP1v4zAOLX" alt="IMAGE" style='height: 100px; width: 100px;'>
-              </div>
-              <div class="row">
-                SUNNY
-              </div>
-              <div class="row">
-                <div class="col-xs-6">
-                  <h4>HIGH</h4>
-                  <h1>50</h1>
-                </div>
-                <div class="col-xs-6">
-                  <h4>LOW</h4>
-                  <h1>40</h1>
-                </div>
-              </div>
-              <div class="row">
-                <h4>Rain Chance: 100%</h4>
+              <div class="col-xs-12 text-center" id="refresh-text">
+                <span class="glyphicon glyphicon-refresh"></span>
+                <span>
+                  Last updated <span id="date">7/9/17</span> at <span id="time">10:37AM</span>
+                </span>
               </div>
             </div>
           </div>

@@ -1,30 +1,33 @@
-/* FIRST SECTION - CURRENT WEATHER CONDITIONS */
-#current-weather {
-  
+#weather-display {
+
 }
-#current-temp {
-  height: 100%;
-  border-right: solid 5px black;
+h3{
+  margin-top: 10px;
+}
+#forecast {
+  margin-top: -50px;
 }
 
-#current-conditions {
-  height: 100%;
+#refresh-text {
+  color: #333;
 }
 
-/* SECOND ROW - 3 DAY FORECAST */
-#forecast{
-  
-}
 .forecast-cells{
+  color: #333;
+  background-color: #f9f9f9;
+  margin-top: 20px;
+  margin-bottom: 20px;
   height: 100%;
-  border: solid 1px black;
+  box-shadow: 2px 2px 10px 2px #dddddd;
 }
-
-
 
 /* PAGE SIZING/STYLING */
 body, html {
-  background-color: #c9c9c9;
+  color: #f9f9f9;
+  background-color: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
+  background-image: url('/images/background-MAINPAGE.jpg');
+  background-size: cover;
 }
 #landing-page{
   height: 100vh;
@@ -37,33 +40,51 @@ body, html {
 
 /* NAV STUFF */
 nav {
-  background-color: #fff;
-  height: 60px;
-  padding: 12px;
+  height: 100px;
+  padding: 30px;
 }
-.form-group {
+#nav-logo {
+  height: 40px;
+}
+#nav-form{
+  float: right;
+  padding-top: 10px;
   width: 200px;
-  margin-right: 5px;
 }
-#brand-image {
-  height: 100%;
-}
+
 
 #tempLg {
   font-size: 180px;
   line-height: .9em;
+  font-weight: bold;
+  padding: 5px 0 10px 0;
 }
-
 #deg-f{
   font-size: 50px
 }
 
 @media screen and (min-width: 768px){
+  body, html{
+    background-image: none;
+  }
+  #current-weather{
+    background-image: url('/images/background-MAINPAGE.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 150px;
+  }
   #tempLg {
     font-size: 125px;
   }
   #deg-f{
-    font-size: 40px
+    font-size: 35px
+  }
+  p{
+    font-size: 18px;
+  }
+  #current-conditions {
+    padding-left: 45px;
   }
 }
 
@@ -72,7 +93,10 @@ nav {
     font-size: 160px;
   }
   #deg-f{
-    font-size: 45px
+    font-size: 42px
+  }
+  p{
+    font-size: 20px;
   }
 }
 
@@ -82,5 +106,8 @@ nav {
   }
   #deg-f{
     font-size: 50px
+  }
+  p{
+    font-size: 24px;
   }
 }
