@@ -1,11 +1,8 @@
-#weather-display {
-
+p{
+  font-size: 24px;
 }
-h3{
-  margin-top: 10px;
-}
-#forecast {
-  margin-top: -50px;
+#current-weather{
+  text-align: center;
 }
 
 #refresh-text {
@@ -13,12 +10,12 @@ h3{
 }
 
 .forecast-cells{
+  padding: 20px;
   color: #333;
   background-color: #f9f9f9;
   margin-top: 20px;
   margin-bottom: 20px;
   height: 100%;
-  box-shadow: 2px 2px 10px 2px #dddddd;
 }
 
 /* PAGE SIZING/STYLING */
@@ -48,7 +45,7 @@ nav {
 }
 #nav-form{
   float: right;
-  padding-top: 10px;
+  padding-top: 4px;
   width: 200px;
 }
 
@@ -73,6 +70,10 @@ nav {
     background-position: center bottom;
     background-repeat: no-repeat;
     padding-bottom: 150px;
+    text-align: left;
+  }
+  #forecast {
+    margin-top: -75px;
   }
   #tempLg {
     font-size: 125px;
@@ -85,6 +86,9 @@ nav {
   }
   #current-conditions {
     padding-left: 45px;
+  }
+  .forecast-cells{
+    box-shadow: 2px 2px 3px #dddddd;
   }
 }
 

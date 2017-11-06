@@ -53,23 +53,17 @@
             <div class="row">
               <div class="col-sm-4" id="current-temp">
                 <div class="row">
-                  <p>
-                    &nbsp;
-                    <span="city-state"> Dallas, TX </span>  <!-- CITY/STATE -->
-                  </p>
+                  <p> &nbsp; <span="city-state"> Dallas, TX </span> </p>                            <!-- CITY,STATE -->
                 </div>
-                <div class="row font-weight-bold" id="tempLg">   <!-- CURRENT TEMP - LARGE -->
-                  85&deg;
-                </div>
-                <p>Feels Like: <span id="feels-like">120</span>&deg;</p>   <!-- FEELS LIKE -->
+                <div class="row" id="tempLg"> 85&deg; </div>                                        <!-- CURRENT TEMP -->
+                <h4>Feels Like: <span id="feels-like">120</span>&deg;</h4>                          <!-- FEELS LIKE -->
               </div>
     
               <div class="col-sm-8" id="current-conditions">
-                <span class="glyphicons glyphicons-cloud"></span><p id="skytext">Cloudy</p>                                                          <!-- SKYTEXT -->
-                <p id="rain">Rain Chance: 0%</p>                                                    <!-- RAIN CHANCE -->
                 <p>High: <span id="high">78</span>&deg; | Low: <span id="low">57</span>&deg;</p>    <!-- HIGH/LOW -->
-                <p>Wind Direction: <span id="wind-direction">Northwest</span></p>                   <!-- Wind Direction -->
+                <p id="rain">Rain Chance: 0%</p>                                                    <!-- RAIN CHANCE -->
                 <p>Wind Speed: <span id="wind-speed">6 mph</span></p>                               <!-- Wind Speed -->
+                <p>Wind Direction: <span id="wind-direction">Northwest</span></p>                   <!-- Wind Direction -->
               </div>
             </div>
         </div>
@@ -78,86 +72,41 @@
       <!-- //////////////////// FORECAST /////////////////// -->
       <div id="forecast">
         <div class="container">
-            <div class="row text-center" id="forecast">
+            <div class="row text-center">
               <div class="col-sm-4">
                 <div class="forecast-cells" id="fc-day1">
+                  <p id="fc1-day">TUESDAY</p>
+                  <h4 id="fc1-date">DATE</h4>
                   <div class="row">
-                    <h4>TUESDAY</h4>
-                    <h4>DATE</h4>
+                    <img id="fc1-image" src="/images/forecast-icons/sunny-icon-01.png" alt="Weather-State" class="forecast-image">
                   </div>
-                  <div class="row">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyuvXFxk99znqDv1ETCZpjPmEy9G6wlDZ8ZZk6NDiP1v4zAOLX" alt="IMAGE" style='height: 100px; width: 100px;'>
-                  </div>
-                  <div class="row">
-                    SUNNY
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-6">
-                      <h4>HIGH</h4>
-                      <h1>50</h1>
-                    </div>
-                    <div class="col-xs-6">
-                      <h4>LOW</h4>
-                      <h1>40</h1>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <h4>Rain Chance: 100%</h4>
-                  </div>
+                  <br>
+                  <p>HIGH: <span id="fc1-high">88</span> | LOW: <span id="fc1-low">68</span></p>
+                  <h4>Rain Chance: <span id="fc1-rain">100%</span></h4>
                 </div>
               </div>
               <div class="col-sm-4">
-                <div class="forecast-cells" id="fc-day2">
+                <div class="forecast-cells" id="fc-day1">
+                  <p id="fc1-day">TUESDAY</p>
+                  <h4 id="fc1-date">DATE</h4>
                   <div class="row">
-                    <h4>TUESDAY</h4>
-                    <h4>DATE</h4>
+                    <img id="fc1-image" src="/images/forecast-icons/sunny-icon-01.png" alt="Weather-State" class="forecast-image">
                   </div>
-                  <div class="row">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyuvXFxk99znqDv1ETCZpjPmEy9G6wlDZ8ZZk6NDiP1v4zAOLX" alt="IMAGE" style='height: 100px; width: 100px;'>
-                  </div>
-                  <div class="row">
-                    SUNNY
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-6">
-                      <h4>HIGH</h4>
-                      <h1>50</h1>
-                    </div>
-                    <div class="col-xs-6">
-                      <h4>LOW</h4>
-                      <h1>40</h1>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <h4>Rain Chance: 100%</h4>
-                  </div>
+                  <br>
+                  <p>HIGH: <span id="fc1-high">88</span> | LOW: <span id="fc1-low">68</span></p>
+                  <h4>Rain Chance: <span id="fc1-rain">100%</span></h4>
                 </div>
               </div>
               <div class="col-sm-4">
-                <div class="forecast-cells" id="fc-day3">
+                <div class="forecast-cells" id="fc-day1">
+                  <p id="fc1-day">TUESDAY</p>
+                  <h4 id="fc1-date">DATE</h4>
                   <div class="row">
-                    <h4>TUESDAY</h4>
-                    <h4>DATE</h4>
+                    <img id="fc1-image" src="/images/forecast-icons/sunny-icon-01.png" alt="Weather-State" class="forecast-image">
                   </div>
-                  <div class="row">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyuvXFxk99znqDv1ETCZpjPmEy9G6wlDZ8ZZk6NDiP1v4zAOLX" alt="IMAGE" style='height: 100px; width: 100px;'>
-                  </div>
-                  <div class="row">
-                    SUNNY
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-6">
-                      <h4>HIGH</h4>
-                      <h1>50</h1>
-                    </div>
-                    <div class="col-xs-6">
-                      <h4>LOW</h4>
-                      <h1>40</h1>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <h4>Rain Chance: <span id="fc3rain">100%</span></h4>
-                  </div>
+                  <br>
+                  <p>HIGH: <span id="fc1-high">88</span> | LOW: <span id="fc1-low">68</span></p>
+                  <h4>Rain Chance: <span id="fc1-rain">100%</span></h4>
                 </div>
               </div>
             </div>
