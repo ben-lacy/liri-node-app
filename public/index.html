@@ -1,56 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>WeatherAware</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- FAVICON -->
-        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-        <!--  CSS  -->
-        <link href="/style/reset.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link href="/style/style.css" rel="stylesheet">
-        <!-- FONTS -->
-        
-    </head>
+  <head>
+    <title>WeatherAware</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <!--  CSS  -->
+    <link href="/style/reset.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/style/style.css" rel="stylesheet">
+    <!-- FONTS -->
+      
+  </head>
 	<body>
-        <div id="landing-page">
-            <div id="pick-your-poison">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h1>Is winter really coming?</h1>
-                            <h3>Weather stuff words here wow such text filling blank space should've used lorem ipsum.</h3>
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="loc-input" placeholder="Enter your City + State or Zip Code">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit" id="loc-input-btn">Submit</button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div id="landing-page">
+      <div class="container" id="positioner">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1>Is winter really coming?</h1>
+            <h3>Weather stuff words here wow such text filling blank space should've used lorem ipsum.</h3>
+            <form>
+              <input type="text" class="form-control" id="loc-input" placeholder="Enter your City + State or Zip Code">
+              <button class="btn btn-default" type="submit" id="loc-input-btn">Submit</button>
+            </form>
+          </div>
         </div>
-        
-        <script src="https://code.jquery.com/jquery.js"></script>
-        <script>
-            function hideLandingPage(){
-                $("#landing-page").toggleClass('hidden');
-            }
+      </div>
+    </div>
+    <div  id="weather-display"> <!-- class="hidden" -->
+      <nav>
+        <a href="/">
+          <div class="pull-left" id="brand-image">
+            <img alt="Logo" src="/images/weather-aware-logo.png">
+          </div>
+        </a>
+        <form class="pull-right">
+          <div class="form-group pull-left">
+            <input type="text" class="form-control" id="nav-search" placeholder="City, State or Zip">
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-arrow-right"></span>
+          </button>
+        </form>
+      </nav>
+      <div class="container">
+        <div class="row text-center" id="location-name">
+          <h1>CITY NAME, STATE</h1>
+        </div>
+        <div class="row" id="current-weather">
+          <div class="col-xs-6 text-right" id="current-temp">
+            <h1>WEATHER IMG</h1>
+            <h1>CURRENT TEMP</h1>
+          </div>
+          <div class="col-xs-6" id="current-conditions">
+            <h1>RAIN %</h1>
+            <h1>WIND SPEED</h1>
+            <h1>WIND DIRECTION</h1>
+            <h1>HUMIDITY?</h1>
+            <h1>OZONE?</h1>
+          </div>
+        </div>
+        <div class="row" id="forecast">
+          <div class="col-xs-4 forecast-cells" id="fc-1day">
+            <h1>TOMORROW</h1>
+          </div>
+          <div class="col-xs-4 forecast-cells" id="fc-2day">
+            <h1>NEXT</h1>
+          </div>
+          <div class="col-xs-4 forecast-cells" id="fc-3day">
+            <h1>NEXT NEXT</h1>
+          </div>
+        </div>
+        <div class="row">
 
-            $("#loc-input-btn").click(function(event){
-                event.preventDefault();
-                var loc = $("#loc-input").val().trim();
-                $("#loc-input").val("");
-                loc = { location: loc };
-                var currentURL = window.location.origin;
-                // hideLandingPage();
-                $.post(currentURL + '/api/location', loc, function(data){
-                    // do something with returned data
-                });
-            });
-        </script>
-    </body>
+        </div>
+      </div>
+    </div>
+        
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script>
+      function hideLandingPage(){
+        $("#landing-page").toggleClass('hidden');
+        $("#weather-display").toggleClass('hidden');
+      }
+
+      $("#loc-input-btn").click(function(event){
+        event.preventDefault();
+        var loc = $("#loc-input").val().trim();
+        $("#loc-input").val("");
+        loc = { location: loc };
+        var currentURL = window.location.origin;
+        // hideLandingPage();
+        $.post(currentURL + '/api/location', loc, function(data){
+            // do something with returned data
+        });
+      });
+    </script>
+  </body>
 </html>

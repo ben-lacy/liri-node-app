@@ -17,5 +17,5 @@ require(path.join(__dirname, './routes/routes.js'))(app);
 
 // ------------ PORT LISTENER ---------- //
 app.listen(port, function() {
-    console.log("App listening on port " + port);
+  console.log("App listening on port " + port);
 });
