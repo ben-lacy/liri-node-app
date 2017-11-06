@@ -21,7 +21,7 @@ module.exports = function (app) {
             name: result[0].location.name,
             todaysdate: result[0].current.date,
             temp: result[0].current.temperature,
-            day: result[0].current.day,
+            time: result[0].current.observationtime,
             high: result[0].forecast[1].high,
             low: result[0].forecast[1].low,
             skytext: result[0].current.skytext,

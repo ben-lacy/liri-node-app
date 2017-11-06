@@ -1,26 +1,30 @@
 /* FIRST SECTION - CURRENT WEATHER CONDITIONS */
 #current-weather {
-  border: solid 4px yellow;
+  
 }
-#current-temp, #current-conditions {
-  border: solid 4px red;
+#current-temp {
+  height: 100%;
+  border-right: solid 5px black;
+}
+
+#current-conditions {
   height: 100%;
 }
 
 /* SECOND ROW - 3 DAY FORECAST */
 #forecast{
-  border: solid 4px black;
+  
 }
 .forecast-cells{
   height: 100%;
-  border: solid 4px green;
+  border: solid 1px black;
 }
 
 
 
 /* PAGE SIZING/STYLING */
 body, html {
-  
+  background-color: #c9c9c9;
 }
 #landing-page{
   height: 100vh;
@@ -33,10 +37,9 @@ body, html {
 
 /* NAV STUFF */
 nav {
-  background-color: red;
+  background-color: #fff;
   height: 60px;
   padding: 12px;
-  border-bottom: solid 4px blue;
 }
 .form-group {
   width: 200px;
