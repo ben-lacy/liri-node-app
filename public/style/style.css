@@ -48,3 +48,39 @@ nav {
 #brand-image {
   height: 100%;
 }
+
+#tempLg {
+  font-size: 180px;
+  line-height: .9em;
+}
+
+#deg-f{
+  font-size: 50px
+}
+
+@media screen and (min-width: 768px){
+  #tempLg {
+    font-size: 125px;
+  }
+  #deg-f{
+    font-size: 40px
+  }
+}
+
+@media screen and (min-width: 992px){
+  #tempLg {
+    font-size: 160px;
+  }
+  #deg-f{
+    font-size: 45px
+  }
+}
+
+@media screen and (min-width: 1200px){
+  #tempLg {
+    font-size: 180px;
+  }
+  #deg-f{
+    font-size: 50px
+  }
+}
