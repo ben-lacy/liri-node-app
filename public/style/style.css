@@ -1,41 +1,41 @@
-p{
-  font-size: 24px;
-}
-#current-weather{
-  text-align: center;
-}
-
-#refresh-text {
-  color: #333;
-}
-
-.forecast-cells{
-  padding: 20px;
-  color: #333;
-  background-color: #f9f9f9;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  height: 100%;
-}
-
 /* PAGE SIZING/STYLING */
 body, html {
   color: #f9f9f9;
   background-color: #f9f9f9;
   font-family: 'Roboto', sans-serif;
-  background-image: url('/images/background-MAINPAGE.jpg');
+  background-image: url('/images/background-images/background-MAINPAGE.jpg');
   background-size: cover;
 }
 #landing-page{
   height: 100vh;
+  background-size: cover;
+  background-position: top left;
 }
 #positioner{
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-70%);
+}
+#landing-text{
+  padding: 5px;
+}
+#main-message{
+  font-size: 50px;
+  font-weight: bold;
+}
+.tinycon{
+  height: 25px;
+  width: 25px;
+  margin: 3px;
+}
+p{
+  font-size: 24px;
+}
+#refresh-text {
+  color: #333;
 }
 
-/* NAV STUFF */
+/* NAVBAR - HEADER */
 nav {
   height: 100px;
   padding: 30px;
@@ -46,12 +46,15 @@ nav {
 #nav-form{
   float: right;
   padding-top: 4px;
-  width: 200px;
+  width: 300px;
 }
 
-
+/* CURRENT WEATHER SECTION */
+#current-weather{
+  text-align: center;
+}
 #tempLg {
-  font-size: 180px;
+  font-size: 150px;
   line-height: .9em;
   font-weight: bold;
   padding: 5px 0 10px 0;
@@ -60,20 +63,42 @@ nav {
   font-size: 50px
 }
 
+/* FORECAST SECTION */
+.forecast-cells{
+  padding: 30px;
+  color: #333;
+  background-color: #f9f9f9;
+  margin-top: 20px;
+}
+.forecast-image{
+  width: 100px;
+  height: 100px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 767px){
+  #nav-logo-div, #nav-form{
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 768px){
   body, html{
     background-image: none;
   }
   #current-weather{
-    background-image: url('/images/background-MAINPAGE.jpg');
+    background-image: url('/images/background-images/background-MAINPAGE.jpg');
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
     padding-bottom: 150px;
     text-align: left;
   }
+  #main-message{
+    font-size: 80px;
+  }
   #forecast {
-    margin-top: -75px;
+    margin-top: -100px;
   }
   #tempLg {
     font-size: 125px;
@@ -88,7 +113,7 @@ nav {
     padding-left: 45px;
   }
   .forecast-cells{
-    box-shadow: 2px 2px 3px #dddddd;
+    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
   }
 }
 
