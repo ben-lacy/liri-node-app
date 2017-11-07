@@ -14,20 +14,17 @@ module.exports = function (app) {
     weather.find({ search: location, degreeType: 'F' },
       function (err, result) {
         if(err){ throw err };
-        var direction = result[0].current.winddisplay.toString();
-        direction = direction.split(" ");
         var weatherData = {
           current: {
             name: result[0].location.name,
-            todaysdate: result[0].current.date,
+            date: result[0].current.date,
             temp: result[0].current.temperature,
             time: result[0].current.observationtime,
             high: result[0].forecast[1].high,
             low: result[0].forecast[1].low,
             skytext: result[0].current.skytext,
             feelslike: result[0].current.feelslike,
-            windDirection: direction[2],
-            windSpeed: result[0].current.windspeed,
+            wind: result[0].current.winddisplay,
             rain: result[0].forecast[1].precip,
           },
           forecast1: {
@@ -56,7 +53,7 @@ module.exports = function (app) {
           }
         };
         // console.log(JSON.stringify(weatherData, null, 2));
-        return weatherData;
+        res.json(weatherData);
       }
     )
   });

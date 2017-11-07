@@ -52,22 +52,20 @@
             <a href="/"><div class="pull-left" id="nav-logo-div">
                 <img alt="Logo" src="/images/LOGO-white-PNG-01.png" id="nav-logo">
             </div></a>
-            <form id="nav-form">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Enter ZIP or CITY, STATE">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="submit">
-                      <span class="glyphicon glyphicon-arrow-right"></span>
-                  </button>
-                </span>
-              </div>
+            <form class="input-group" id="nav-form">
+              <input type="text" class="form-control" placeholder="Enter ZIP or CITY, STATE" id="loc-input-2">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit" id="nav-submit">
+                    <span class="glyphicon glyphicon-arrow-right"></span>
+                </button>
+              </span>
             </form>
           </nav>
           <br><br>
         <div class="container">
           <!-- //////////////////// CURRENT-WEATHER /////////////////// -->
             <div class="row">
-              <p> &nbsp; <span="city-state"> Dallas, TX </span> </p>  <!-- CURRENT CITY,STATE -->
+              <p> &nbsp; <span id="city-state"> Dallas, TX </span> </p>  <!-- CURRENT CITY,STATE -->
             </div>
             <div class="row">
               <div class="col-sm-4" id="current-temp">
@@ -105,38 +103,41 @@
             <div class="row text-center">
               <div class="col-sm-4">
                 <!-- DAY 1 -->
-                <div class="forecast-cells" id="fc1">
+                <div class="forecast-cells">
                   <p id="fc1-day">TUESDAY</p>
                   <h4 id="fc1-date">DATE</h4>
                   <div class="row">
                     <img id="fc1-image" src="/images/forecast-icons/sunny-icon-01.png" alt="Weather-State" class="forecast-image">
                   </div>
+                  <h4 id="fc1-skytext">SUNNY</h4>
                   <br>
                   <p>HIGH: <span id="fc1-high">88</span> | LOW: <span id="fc1-low">68</span></p>
-                  <h4>Rain Chance: <span id="fc1-rain">100%</span></h4>
+                  <h4>Rain Chance: <span id="fc1-rain">100</span>%</h4>
                 </div>
               </div>
               <div class="col-sm-4">
                 <!-- DAY 2 -->
-                <div class="forecast-cells" id="fc2">
+                <div class="forecast-cells">
                   <p id="fc2-day">TUESDAY</p>
                   <h4 id="fc2-date">DATE</h4>
                   <div class="row">
                     <img id="fc2-image" src="/images/forecast-icons/sunny-icon-01.png" alt="Weather-State" class="forecast-image">
                   </div>
+                  <h4 id="fc2-skytext">SUNNY</h4>
                   <br>
                   <p>HIGH: <span id="fc2-high">88</span> | LOW: <span id="fc2-low">68</span></p>
-                  <h4>Rain Chance: <span id="fc2-rain">100%</span></h4>
+                  <h4>Rain Chance: <span id="fc2-rain">100</span>%</h4>
                 </div>
               </div>
               <div class="col-sm-4">
                 <!-- DAY 3 -->
-                <div class="forecast-cells" id="fc3">
+                <div class="forecast-cells">
                   <p id="fc3-day">TUESDAY</p>
                   <h4 id="fc3-date">DATE</h4>
                   <div class="row">
                     <img id="fc3-image" src="/images/forecast-icons/sunny-icon-01.png" alt="Weather-State" class="forecast-image">
                   </div>
+                  <h4 id="fc3-skytext">SUNNY</h4>
                   <br>
                   <p>HIGH: <span id="fc3-high">88</span> | LOW: <span id="fc3-low">68</span></p>
                   <h4>Rain Chance: <span id="fc3-rain">100</span>%</h4>
@@ -147,9 +148,7 @@
             <div class="row">
               <div class="col-xs-12 text-center" id="refresh-text">
                 <span class="glyphicon glyphicon-refresh"></span>
-                <span>
-                  Last updated <span id="date">7/9/17</span> at <span id="time">10:37AM</span>
-                </span>
+                Last updated <span id="date">7/9/17</span> at <span id="time">22:00</span>
               </div>
             </div>
           </div>
@@ -158,50 +157,6 @@
     </div>
         
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script>
-      function randomizeMe(){
-        var messages = [
-          "Shorts or jeans?",
-          "Will it be hot today?",
-          "Should I bring an umbrella?",
-          "Is it going to rain?",
-          "Should I pack a jacket?",
-          "Is winter really coming?",
-          "Will I need a sweater?",
-          "Long or short sleeves?"
-        ];
-        var bgs = [
-          "url('/images/background-images/background-HOT.jpg')",
-          "url('/images/background-images/background-HOT.jpg')",
-          "url('/images/background-images/background-RAINY.jpg')",
-          "url('/images/background-images/background-RAINY.jpg')",
-          "url('/images/background-images/background-SNOW.jpg')",
-          "url('/images/background-images/background-SNOW.jpg')",
-          "url('/images/background-images/background-SUNNY.jpg')",
-          "url('/images/background-images/background-SUNNY.jpg')",
-        ];
-        var pickOne = Math.floor((Math.random() * 8) + 0);
-        $("#landing-page").css("background-image", bgs[pickOne]);
-        $("#main-message").text(messages[pickOne]);
-      }
-      randomizeMe();
-
-      function switchPages(){
-        $("#landing-page").toggleClass('hidden');
-        $("#weather-display").toggleClass('hidden');
-      }
-
-      $("#loc-input-btn").click(function(event){
-        event.preventDefault();
-        var loc = $("#loc-input").val().trim();
-        $("#loc-input").val("");
-        loc = { location: loc };
-        var currentURL = window.location.origin;
-        switchPages();
-        $.post(currentURL + '/api/location', loc, function(data){
-            // do something with returned data
-        });
-      });
-    </script>
+    <script src="/js/app.js"></script>
   </body>
 </html>
