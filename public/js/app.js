@@ -1,23 +1,3 @@
-var messages = [
-  "Shorts or jeans?",
-  "Will it be hot today?",
-  "Should I bring an umbrella?",
-  "Is it going to rain?",
-  "Should I pack a jacket?",
-  "Is winter really coming?",
-  "Will I need a sweater?",
-  "Long or short sleeves?"
-];
-var bgs = [
-  "url('/images/background-images/background-HOT.jpg')",
-  "url('/images/background-images/background-HOT.jpg')",
-  "url('/images/background-images/background-RAINY.jpg')",
-  "url('/images/background-images/background-RAINY.jpg')",
-  "url('/images/background-images/background-SNOW.jpg')",
-  "url('/images/background-images/background-SNOW.jpg')",
-  "url('/images/background-images/background-SUNNY.jpg')",
-  "url('/images/background-images/background-SUNNY.jpg')",
-];
 var icons = {
   Cloudy: "/images/small-icons/CLOUDY.png",
   Partly:"/images/small-icons/PARTLY-CLOUDY.png",
@@ -119,15 +99,34 @@ function sendItUp (event){
       }
     }
     console.log(currentSky + "---" + fc1Sky + "---" + fc2Sky + "---" + fc3Sky);
-    console.log(icons.currentSky);
-    // $("#current-condition").attr('src', icons.Storm);
 
   });
 };
 $("#loc-input-btn").click(sendItUp);
 $("#nav-submit").click(sendItUp);
 
+
 // CHOOSES A RANDOM BACKGROUND AND MESSAGE FOR THE LANDING PAGE
+var messages = [
+  "Shorts or jeans?",
+  "Will it be hot today?",
+  "Should I bring an umbrella?",
+  "Is it going to rain?",
+  "Should I pack a jacket?",
+  "Is winter really coming?",
+  "Will I need a sweater?",
+  "Long or short sleeves?"
+];
+var bgs = [
+  "url('/images/background-images/background-HOT.jpg')",
+  "url('/images/background-images/background-HOT.jpg')",
+  "url('/images/background-images/background-RAINY.jpg')",
+  "url('/images/background-images/background-RAINY.jpg')",
+  "url('/images/background-images/background-SNOW.jpg')",
+  "url('/images/background-images/background-SNOW.jpg')",
+  "url('/images/background-images/background-SUNNY.jpg')",
+  "url('/images/background-images/background-SUNNY.jpg')",
+];
 function randomizeMe(){
   var pickOne = Math.floor((Math.random() * 8) + 0);
   $("#landing-page").css("background-image", bgs[pickOne]);
