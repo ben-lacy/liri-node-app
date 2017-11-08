@@ -161,6 +161,10 @@ var bgs = [
   "url('/images/background-images/background-SUNNY.jpg')",
   "url('/images/background-images/background-SUNNY.jpg')",
 ];
+
+function rotateLanding() {
+  setTimeout(randomizeMe(), 3000);
+}
 function randomizeMe(){
   var pickOne = Math.floor((Math.random() * 8) + 0);
   $("#landing-page").css("background-image", bgs[pickOne]);
