@@ -1,4 +1,11 @@
-var icons = {
+// SWITCHES BETWEEN LANDING PAGE AND WEATHER DISPLAY
+function switchPages(){
+  $("#landing-page").toggleClass('hidden');
+  $("#weather-display").toggleClass('hidden');
+}
+
+// ICONS FOR FORECAST SKYDATA
+var smallicons = {
   Cloudy: "/images/small-icons/CLOUDY.png",
   Partly:"/images/small-icons/PARTLY-CLOUDY.png",
   Rain: "/images/small-icons/RAIN.png",
@@ -9,11 +16,16 @@ var icons = {
   Snow: "/images/small-icons/WIND.png"
 };
 
-// SWITCHES BETWEEN LANDING PAGE AND WEATHER DISPLAY
-function switchPages(){
-  $("#landing-page").toggleClass('hidden');
-  $("#weather-display").toggleClass('hidden');
-}
+var bigicons = {
+  Cloudy: "/images/forecast-icons/cloudy-icon-01.png",
+  Partly:"/images/forecast-icons/partlycloudy-icon-01.png",
+  Rain: "/images/forecast-icons/rainy-icon-01.png",
+  Showers: "/images/forecast-icons/rainy-icon-01.png",
+  Storm: "/images/forecast-icons/rainy-icon-01.png",
+  Sunny: "/images/forecast-icons/sunny-icon-01.png",
+  Clear: "/images/forecast-icons/sunny-icon-01.png",
+  Snow: "/images/forecast-icons/rainy-icon-01.png"
+};
 
 function sendItUp (event){
   event.preventDefault();
@@ -98,8 +110,30 @@ function sendItUp (event){
         fc3Sky = fc3Sky[1];
       }
     }
-    console.log(currentSky + "---" + fc1Sky + "---" + fc2Sky + "---" + fc3Sky);
+    
+    for (var key in smallicons) {
+      if (smallicons.hasOwnProperty(key)) {
+        if (currentSky === key) {
+          $("#current-skytext-img").attr("src", smallicons[key]);
+        }
+      }
+    }
+    for (var key in bigicons) {
+      if (bigicons.hasOwnProperty(key)) {
+        if (fc1Sky === key) {
+          $("#fc1-image").attr("src", bigicons[key]);
+        }
+        if (fc2Sky === key) {
+          $("#fc2-image").attr("src", bigicons[key]);          
+        }
+        if (fc3Sky === key) {
+          $("#fc3-image").attr("src", bigicons[key]);          
+        }
+      }
+    }
 
+      
+        
   });
 };
 $("#loc-input-btn").click(sendItUp);
