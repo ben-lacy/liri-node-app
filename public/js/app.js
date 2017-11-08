@@ -29,6 +29,9 @@ var bigicons = {
 
 function sendItUp (event){
   event.preventDefault();
+  if (interval) {
+    clearInterval(interval);
+  }
   if ($("#loc-input").val().trim()) {
     var loc = $("#loc-input").val().trim();
     switchPages();
@@ -162,13 +165,11 @@ var bgs = [
   "url('/images/background-images/background-SUNNY.jpg')",
 ];
 
-function rotateLanding() {
-  setTimeout(randomizeMe(), 4000);
-}
 function randomizeMe(){
   var pickOne = Math.floor((Math.random() * 8) + 0);
   $("#landing-page").css("background-image", bgs[pickOne]);
   $("#main-message").text(messages[pickOne]);
+  
 }
 randomizeMe();
-rotateLanding();
+var interval = setInterval(randomizeMe, 4000);
