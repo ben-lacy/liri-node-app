@@ -163,7 +163,7 @@ var bgs = [
 ];
 
 function rotateLanding() {
-  setTimeout(randomizeMe(), 3000);
+  setTimeout(randomizeMe(), 4000);
 }
 function randomizeMe(){
   var pickOne = Math.floor((Math.random() * 8) + 0);
@@ -171,3 +171,4 @@ function randomizeMe(){
   $("#main-message").text(messages[pickOne]);
 }
 randomizeMe();
+rotateLanding();
