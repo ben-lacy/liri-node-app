@@ -172,4 +172,4 @@ function randomizeMe(){
   
 }
 randomizeMe();
-var interval = setInterval(randomizeMe, 4000);
+// var interval = setInterval(randomizeMe, 4000);
