@@ -29,9 +29,9 @@ var bigicons = {
 
 function sendItUp (event){
   event.preventDefault();
-  if (interval) {
-    clearInterval(interval);
-  }
+  // if (interval) {
+  //   clearInterval(interval);
+  // }
   if ($("#loc-input").val().trim()) {
     var loc = $("#loc-input").val().trim();
     switchPages();
