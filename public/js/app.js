@@ -29,9 +29,6 @@ var bigicons = {
 
 function sendItUp (event){
   event.preventDefault();
-  // if (interval) {
-  //   clearInterval(interval);
-  // }
   if ($("#loc-input").val().trim()) {
     var loc = $("#loc-input").val().trim();
     switchPages();
@@ -134,9 +131,6 @@ function sendItUp (event){
         }
       }
     }
-
-      
-        
   });
 };
 $("#loc-input-btn").click(sendItUp);
@@ -172,4 +166,3 @@ function randomizeMe(){
   
 }
 randomizeMe();
-// var interval = setInterval(randomizeMe, 4000);
