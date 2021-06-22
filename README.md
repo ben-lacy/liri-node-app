@@ -1,6 +1,6 @@
 # WeatherAware
 
-Hosted on Heroku: [Link](https://weather-aware.herokuapp.com)
+Not currently publicly hosted.
 
 ![WeatherAware Screenshot 1](./public/images/wa-screenshot.png)
 ![WeatherAware Screenshot 2](./public/images/wa-screenshot2.png)
